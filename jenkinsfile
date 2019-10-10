@@ -2,9 +2,9 @@ node {
     def app
     try {
         
-        stage('Checkout')
+        stage('clone repo')
         {
-            git 'https://github.com/microservices-deployment/test.git'
+            checkout scm
         }
         
         stage('Docker Build')
