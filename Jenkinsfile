@@ -1,26 +1,16 @@
-node {
-    def app
-    
-    try {
-        
-        stage('clone repo')
-        {
-            checkout scm
+pipeline {
+  environment {
+    registry = "https://cloud.docker.com/repository/docker/microservicesdep"
+    registryCredential = 'microservicesdep'
+  }
+  agent any
+  stages {
+    stage('Building image') {
+      steps{
+        script {
+          docker.build registry + ":$BUILD_NUMBER"
         }
-        
-        stage('Docker Build')
-        {
-            app = docker.build("image1")
-        }
-        stage('Push')
-        { 
-            registry = "https://cloud.docker.com/repository/docker/microservicesdep/"
-            registryCredential = 'Venkata@3'
-            app.push("latest")
-        }
+      }
     }
-       catch (err)
-        {
-        currentBuild.result = 'Failure'
-        }
-    }
+  }
+}
