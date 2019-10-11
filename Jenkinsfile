@@ -19,6 +19,7 @@ node {
             app.push("latest")
          }
         }
+    }
        catch (err)
         {
         currentBuild.result = 'Failure'
