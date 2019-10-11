@@ -7,8 +7,10 @@ pipeline {
   stages {
   stage('clone repo') 
   {
+    steps {
        checkout scm
    }   
+  }
     stage('Building image') {
       steps{
         script {
