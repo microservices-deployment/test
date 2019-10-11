@@ -13,14 +13,12 @@ node {
             app = docker.build("image1")
         }
         stage('Push')
-        {
-            environment {
-                 registry = "https://cloud.docker.com/repository/registry-1.docker.io/microservicesdep/test"
-                 registryCredential = 'Venkata@3'
-                  app.push("${env.BUILD_NUMBER}")
-                        }
+        { 
+              docker.withRegistry('https://cloud.docker.com/repository/registry-1.docker.io/microservicesdep/test', 'Venkata@3')
+              app.push("${env.BUILD_NUMBER}")
+         }
         }
-       } catch (err)
+       catch (err)
         {
         currentBuild.result = 'Failure'
         }
