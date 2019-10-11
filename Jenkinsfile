@@ -14,7 +14,7 @@ node {
         }
         stage('Push')
         { 
-             docker.withRegistry('https://cloud.docker.com', 'microservicesdep') {
+             docker.withRegistry('https://cloud.docker.com/repository/docker/microservicesdep/', 'microservicesdep') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
          }
