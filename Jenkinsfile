@@ -4,12 +4,11 @@ pipeline {
     registryCredential = 'microservicesdep'
   }
   agent any
+  stages {
   stage('clone repo') 
   {
        checkout scm
-   }    
-  
-  stages {
+   }   
     stage('Building image') {
       steps{
         script {
