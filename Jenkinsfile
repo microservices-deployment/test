@@ -14,10 +14,9 @@ node {
         }
         stage('Push')
         { 
-             docker.withRegistry('https://cloud.docker.com/repository/docker/microservicesdep/', 'microservicesdep') {
+            registry = "https://cloud.docker.com/repository/docker/microservicesdep/"
+            registryCredential = 'Venkata@3'
             app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
-         }
         }
     }
        catch (err)
