@@ -14,7 +14,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build("image") 
+          dockerImage = docker.build("microservicesdep/image") 
         }
       }
     }
