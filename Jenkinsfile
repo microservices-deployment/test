@@ -1,7 +1,7 @@
 pipeline {
   environment {
     registry = "https://cloud.docker.com/u/microservicesdep"
-    registryCredential = 'Venkata@3'
+    registryCredential = 'microservicesdep'
     dockerImage = ''
   }
   agent any
