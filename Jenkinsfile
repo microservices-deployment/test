@@ -17,8 +17,10 @@ node {
         }
         stage('Push')
         {
+            docker.withRegistry( "" )
+            {
             app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
+            }
         }
        } catch (err)
         {
