@@ -1,21 +1,33 @@
 pipeline {
   environment {
-    registry = "https://cloud.docker.com/repository/docker/microservicesdep"
-    registryCredential = 'microservicesdep'
+    registry = "https://cloud.docker.com/u/microservicesdep"
+    registryCredential = 'Venkata@3'
+    dockerImage = ''
   }
   agent any
   stages {
-  stage('clone repo') 
-  {
-    steps {
-       checkout scm
-   }   
-  }
+    stage('Cloning Git') {
+        checkout scm
+    }
     stage('Building image') {
       steps{
         script {
-          docker.build registry + ":$BUILD_NUMBER"
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
+      }
+    }
+    stage('Deploy Image') {
+      steps{
+        script {
+          docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+          }
+        }
+      }
+    }
+    stage('Remove Unused docker image') {
+      steps{
+        sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
   }
