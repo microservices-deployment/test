@@ -14,8 +14,9 @@ node {
         }
         stage('Push')
         { 
-              docker.withRegistry('https://cloud.docker.com/repository/registry-1.docker.io/microservicesdep/test', 'Venkata@3')
-              app.push("${env.BUILD_NUMBER}")
+             docker.withRegistry('https://cloud.docker.com', 'microservicesdep') {
+            app.push("${env.BUILD_NUMBER}")
+            app.push("latest")
          }
         }
        catch (err)
