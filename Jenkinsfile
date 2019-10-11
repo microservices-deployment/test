@@ -21,8 +21,7 @@ pipeline {
     stage('Deploy Image') {
       steps{
         script {
-          sh 'docker login -u "$registryCredential" -p "Venkata@3"'
-          
+         
            docker.Image('registryCredential').push()
           
         }
