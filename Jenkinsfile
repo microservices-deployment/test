@@ -30,7 +30,7 @@ pipeline {
         script
         {
             sh '''
-            ssh root@192.168.28.149 "kubectl get nodes"
+            ssh root@192.168.28.149 "kubectl apply -f /tmp/deployment.yml"
             
             '''
             
