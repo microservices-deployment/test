@@ -23,5 +23,18 @@ pipeline {
         }
       }
     } 
+    stage('Deploy to k8s')
+    {
+        steps
+        {
+        script
+        {
+            sh '''
+            ssh root@192.168.28.149 "kubectl get nodes"
+            
+            '''
+            
+        }
+    }}
   }
 }
