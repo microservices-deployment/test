@@ -17,5 +17,8 @@ spec:
       containers:
        - name: httpd
          image: microservicesdep/sample
+         ports: 
+           - containerport: 8080
+             protocol: TCP
       imagePullSecrets:
        - name: depreg
