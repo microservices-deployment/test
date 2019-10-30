@@ -18,7 +18,7 @@ spec:
        - name: nginx
          image: microservicesdep/sample
          ports: 
-           - containerport: 8080
+           - containerPort: 8080
              protocol: TCP
       imagePullSecrets:
        - name: depreg
