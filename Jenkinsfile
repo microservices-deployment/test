@@ -30,7 +30,7 @@ pipeline {
         script
         {
             sh '''
-            ssh root@192.168.28.149 "cd /tmp;git clone https://github.com/microservices-deployment/test.git;kubectl apply -f /tmp/test/deployment.yml"
+            ssh root@192.168.28.149 "cd /tmp/;rm -rf *;git clone https://github.com/microservices-deployment/test.git;kubectl apply -f /tmp/test/deployment.yml"
             '''
             
         }
