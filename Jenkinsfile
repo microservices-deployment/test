@@ -10,7 +10,7 @@ pipeline {
     stage('Building Docker image') {
       steps{
         script {
-          dockerImage = docker.build("microservicesdep/sample:v1") 
+          dockerImage = docker.build("microservicesdep/sample:$BUILD_NUMBER") 
         }
       }
     }
@@ -23,7 +23,7 @@ pipeline {
         }
       }
     } 
-    stage('deploy to k8s')
+  /*  stage('deploy to k8s')
     {
         steps
         {
@@ -36,6 +36,7 @@ pipeline {
         }
     }
         
-    }
+    } */
   }
 }
+
