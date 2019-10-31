@@ -23,7 +23,7 @@ pipeline {
         }
       }
     } 
-  /*  stage('deploy to k8s')
+    stage('deploy to k8s')
     {
         steps
         {
@@ -36,7 +36,7 @@ pipeline {
         }
     }
         
-    } */
+    } 
   }
 }
 
