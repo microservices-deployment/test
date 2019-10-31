@@ -10,7 +10,7 @@ pipeline {
     stage('Building Docker image') {
       steps{
         script {
-          dockerImage = docker.build("microservicesdep/sample:latest") 
+          dockerImage = docker.build("microservicesdep/sample:${env.BUILD_ID}") 
         }
       }
     }
