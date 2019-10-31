@@ -14,8 +14,9 @@ spec:
     spec:
       containers:
        - name: nginx
-         image: iamdockeruser/tomcat-app:latest
+         image: microservicesdep/sample:v1
          ports: 
+           - nodePort: 30303
            - containerPort: 8080
              protocol: TCP
       imagePullSecrets:
