@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
        - name: nginx
-         image: microservicesdep/sample
+         image: iamdockeruser/tomcat-app:latest
          ports: 
            - containerPort: 8080
              protocol: TCP
