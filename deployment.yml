@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
        - name: nginx
-         image: iamaruneshuser:latest
+         image: finbourne/wikijs:latest
          ports:
            - containerPort: 8080
              protocol: TCP
