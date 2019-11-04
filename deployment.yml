@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
        - name: nginx
-         image: microservicesdep/sample:2
+         image: microservicesdep/sample:122
          ports:
            - containerPort: 8080
              protocol: TCP
