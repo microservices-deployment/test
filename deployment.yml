@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
        - name: nginx
-         image: microservicesdep/webapp3:latest
+         image: microservicesdep/webapp4:latest
          ports:
            - containerPort: 8080
              protocol: TCP
