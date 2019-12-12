@@ -10,7 +10,7 @@ pipeline {
     stage('Building Docker image') {
       steps{
         script {
-          dockerImage = docker.build("microservicesdep/webapp1:latest") 
+          dockerImage = docker.build("microservicesdep/webapp2:latest") 
         }
       }
     }
