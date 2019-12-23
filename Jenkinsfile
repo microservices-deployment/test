@@ -9,7 +9,7 @@ pipeline {
     stage('Building Docker image') {
       steps{
         script {
-          dockerImage = docker.build("microservicesdep/release4:latest") 
+          dockerImage = docker.build("microservicesdep/release5:latest") 
         }
       }
     }
