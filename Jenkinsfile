@@ -6,12 +6,7 @@ pipeline {
   }
   agent any
   stages {
-    stage('Cloning Git')
-    {
-      steps {
-        git 'https://github.com/microservices-deployment/test.git'
-      }
-    }
+   
     stage('Building Docker image') {
       steps{
         script {
